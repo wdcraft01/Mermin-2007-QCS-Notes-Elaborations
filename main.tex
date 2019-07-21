@@ -111,7 +111,63 @@ S_{01} |10\rangle
   &= |1\rangle_{2} = |01\rangle
 \end{align*}
 
-The vector/matrix representations are useful in eventually interpreting the right-hand side of (1.35) and Mermin's comments about some terms giving a 0, because the zero vector $\overline{0} = \bm{0}$ does admit of a ket-based representation (\textit{i.e.}, the Cbit $|0\rangle = (1 0 \ldots 0)^T$ is not the same thing as the $2^N$-dimensional zero vector $(0 0 \ldots 0)^T$).
+The vector/matrix representations are useful in eventually interpreting the right-hand side of (1.35) and Mermin's comments about some terms giving a 0, because the zero vector $\overline{0} = \bm{0}$ does not admit of a ket-based representation (\textit{i.e.}, the Cbit $|0\rangle = (1 0 \ldots 0)^T$ is not the same thing as the $2^N$-dimensional zero vector $(0 0 \ldots 0)^T$).
+
+\vspace{0.125in}
+
+Toward a better understanding, then, of the right-hand size of (1.35), let us again consider a 2-Cbit system $|xy\rangle$ and recall the matrix representations of the projections ($\bm{n}$, $\bm{\widetilde{n}}$) and NOT (or ``flip'') $\bm{X}$ operators:
+
+\begin{align*}
+\bm{n} &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}\\
+\bm{\widetilde{n}} &= \bm{1} - \bm{n} = \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}\\
+\bm{X} &= \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}
+\end{align*}
+
+Then we would have:
+\begin{align*}
+\bm{n}_1\bm{n}_0 \; |00\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{n}_0 \; |01\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{n}_0 \; |10\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{n}_0 \; |11\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\1\end{pmatrix}
+     = |3\rangle_{2} = |11\rangle\\
+\end{align*}
+
 
 % =============== %
 %  Bibliography   %
