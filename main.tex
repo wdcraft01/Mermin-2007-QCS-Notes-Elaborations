@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{Mermin (2007) \textit{Quantum Computer Science}}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{bm} % for bold math symbols
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{color, colortbl} % For Coloring Table Elements
+\usepackage{wrapfig}
+%\usepackage{alltt}
+\usepackage{listings}
+\usepackage{makecell} % allows more complex table formatting
+\usepackage{proof} %for inference trees
+\usepackage{scrextend} % for block indents (for example)
+%\usepackage{cite} % incompatible with biblatex
+\usepackage{biblatex}
+\addbibresource{bibliography.bib}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{url}
+
+% for the makecell package:
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\addtolength{\hoffset}{-1cm}
+\addtolength{\textwidth}{1cm}
+\graphicspath{ {IMAGES/} }
+
+\definecolor{Gray}{gray}{0.9}
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+
+\title{Notes \& Elaborations on Mermin's (2007) \textit{Quantum Computer Science: An Introduction}}
+\author{Warren (Hoss) Craft}
+\date{Summer 2019}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%\newpage
+
+\flushleft
+
+%%%%%%%%%%%%%%%%%%%
+%   1.35          %
+%%%%%%%%%%%%%%%%%%%
+
+\textbf{EQ 1.35 (SWAP operator in terms of projections and flips)}\par
+
+\vspace{0.125in}
+
+On pg 12, Mermin \cite{Mermin:2007} notes that the SWAP operator $S_{ij}$ can be written as:
+\[\tag{1.35}
+    \bm{S}_{ij} = \bm{n}_i \bm{n}_j
+    + \bm{\widetilde{n}}_i \bm{\widetilde{n}}_j
+    + (\bm{X}_i \bm{X}_j)
+      ( \bm{n}_i \bm{\widetilde{n}}_j 
+        + \bm{\widetilde{n}}_i \bm{n}_j)
+\]
+and he goes on to remark that:
+\vspace{0.125in}
+\begin{addmargin}[0.25in]{0.25in}
+At the risk of belaboring the obvious, I note that (1.35) acts as the swap operator because if both Cbits are in the state $|1\rangle$ (so swapping their states does nothing) then only the first term in the sum acts (\textit{i.e.} each of the other three terms gives 0) and multiplies the state by 1; if both Cbits are in the state $|0\rangle$, only the second term acts and again multiplies the state by 1; if Cbit $i$ is in the state $|1\rangle$ and Cbit $j$ is in the state $|0\rangle$, only the third term acts and the effect of flipping both Cbits is to swap their states; and if Cbit $i$ is in the state $|0\rangle$ and Cbit $j$ is in the state $|1\rangle$, only the fourth term acts and the effect of the two $X$s is again to swap their states.
+\end{addmargin}
+
+\vspace{0.125in}
+
+Mermin's comment that ``each of the other three terms gives 0'', for example, can be confusing, and the interpretation of the summation operations could use some clarification as well. To see more clearly what is happening in (1.35), it can help to consider the SWAP operator $S_{01}$ (and its equivalent in terms of the projections and flips as shown in Eq (1.35)) applied in the concrete case of a 2 Cbit system $|xy\rangle$.
+
+\vspace{0.125in}
+
+Generally, we have $S_{01} |xy\rangle = |yx\rangle$, and more specifically we have:
+
+\vspace{0.125in}
+
+\begin{addmargin}[0.25in]{0.25in}
+$S_{01} |00\rangle = |00\rangle$\par
+$S_{01} |01\rangle = |10\rangle$\par
+$S_{01} |10\rangle = |01\rangle$\par
+$S_{01} |11\rangle = |11\rangle$\par
+\end{addmargin}
+
+\vspace{0.125in}
+
+That is clear conceptually, but it is also useful to remind ourselves of the underlying algebraic processing using the matrix representations and tensor and matrix multiplication. For example,
+\begin{align*}
+S_{01} |10\rangle
+  &= S_{01} (|1\rangle \otimes |0\rangle)
+  = S_{01} (\begin{pmatrix}0\\1\end{pmatrix} \otimes
+             \begin{pmatrix}1\\0\end{pmatrix})\\
+  &= S_{01} \begin{pmatrix}0\\0\\1\\0\end{pmatrix}
+  = \begin{pmatrix} 1 & 0 & 0 & 0\\
+                    0 & 0 & 1 & 0\\
+                    0 & 1 & 0 & 0\\
+                    0 & 0 & 0 & 1\end{pmatrix}
+    \begin{pmatrix}0\\0\\1\\0\end{pmatrix}
+  = \begin{pmatrix}0\\1\\0\\0\end{pmatrix}\\
+  &= |1\rangle_{2} = |01\rangle
+\end{align*}
+
+The vector/matrix representations are useful in eventually interpreting the right-hand side of (1.35) and Mermin's comments about some terms giving a 0, because the zero vector $\overline{0} = \bm{0}$ does admit of a ket-based representation (\textit{i.e.}, the Cbit $|0\rangle = (1 0 \ldots 0)^T$ is not the same thing as the $2^N$-dimensional zero vector $(0 0 \ldots 0)^T$).
+
+% =============== %
+%  Bibliography   %
+% =============== %
+
+\printbibliography
+
+\end{document}
