@@ -165,7 +165,96 @@ Then we would have:
      \otimes
      \begin{pmatrix}0\\1\end{pmatrix}
      = \begin{pmatrix}0\\0\\0\\1\end{pmatrix}
-     = |3\rangle_{2} = |11\rangle\\
+     = |3\rangle_{2} = |11\rangle = \bm{1}|11\rangle\\
+\end{align*}
+and we see what Mermin means when he remarks that the first term in the sum (\textit{i.e.}, the $\bm{n}_i\bm{n}_j$ term) multiplies the state by 1 when the $i$th and $j$th CBits are both $|1\rangle$. We can also see that this concrete example generalizes --- by considering what happens, for example, when we have the target states within a larger Cbit system. Suppose we take a 5-Cbit system and consider $\bm{n}_3\bm{n}_1$:
+\begin{align*}
+\bm{n}_3\bm{n}_1 \; |00000\rangle
+  &= \bm{1}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \bm{n}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \bm{1}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \bm{n}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \bm{1}
+     \begin{pmatrix}1\\0\end{pmatrix}\\
+  &= \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}\\
+  &= \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1\\0\end{pmatrix}\\
+  &= \bm{0}_{32}
+\end{align*}
+where $\bm{0}_{32}$ indicates a zero vector (consisting of a column vector of 32 zeroes). Whenever a $2 \times 1$ zero vector appears as a factor anywhere in the tensor product, we end up with a column vector of all zeros. Thus $\bm{n}_i \bm{n}_j$ will always produce a zero vector for any input where the $i$th and $j$th states are not both $|1\rangle$. For the case where the $i$th and $j$th states are both $|1\rangle$, we get some sense of the generality by again considering the action of $\bm{n}_3\bm{n}_1$ on a 5-Cbit system:
+\begin{align*}
+\bm{n}_3\bm{n}_1 \; |11010\rangle
+  &= \bm{1}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \bm{n}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \bm{1}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \bm{n}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \bm{1}
+     \begin{pmatrix}1\\0\end{pmatrix}\\
+  &= \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}\\
+  &= \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1\\0\end{pmatrix}\\
+  &= \begingroup % keep the change local
+     \setlength\arraycolsep{2pt}\setcounter{MaxMatrixCols}{32}
+     \begin{pmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\end{pmatrix}^{T}
+     \endgroup\\
+  &= |26\rangle_{5}\\
+  &= |11010\rangle
 \end{align*}
 
 
