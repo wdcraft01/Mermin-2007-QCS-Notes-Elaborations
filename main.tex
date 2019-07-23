@@ -303,7 +303,227 @@ We can similarly consider the 2nd term in the sum in (1.35), taking a quick look
      \begin{pmatrix}0\\0\end{pmatrix}
      = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}
 \end{align*}
-There we see that $\bm{\widetilde{n}}_1\bm{\widetilde{n}}_0$ produces a zero vector for any inputs with a $|1\rangle$ state, and acts as a unit multiplier for the 2-Cbit system with state $|00\rangle$. As with the $\bm{n}_1\bm{n}_0$ operator, these observations about the $\bm{\widetilde{n}}_1\bm{\widetilde{n}}_0$ operator on the 2-Cbit system are easily generalized to a $\bm{\widetilde{n}}_i\bm{\widetilde{n}}_j$ operator on an $N$-Cbit system.
+There we see that $\bm{\widetilde{n}}_1\bm{\widetilde{n}}_0$ produces a zero vector for any inputs with a $|1\rangle$ as a component in its state, and acts as a unit multiplier for the 2-Cbit system with state $|00\rangle$. As with the $\bm{n}_1\bm{n}_0$ operator, these observations about the $\bm{\widetilde{n}}_1\bm{\widetilde{n}}_0$ operator on the 2-Cbit system are easily generalized to a $\bm{\widetilde{n}}_i\bm{\widetilde{n}}_j$ operator on an $N$-Cbit system.
+
+\vspace{0.125in}
+
+In part for the practice but also for the sake of completion, we can consider the effects of the 3rd and 4th terms on a 2-Cbit system. First, the $\bm{n}_i\bm{\widetilde{n}}_j$ term:
+
+\begin{align*}
+\bm{n}_1\bm{\widetilde{n}}_0 \; |00\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{\widetilde{n}}_0 \; |01\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{\widetilde{n}}_0 \; |10\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\1\\0\end{pmatrix}
+     = |2\rangle_2
+     = |10\rangle
+     = \bm{1} |10\rangle\\
+\bm{n}_1\bm{\widetilde{n}}_0 \; |11\rangle
+  &= \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}
+\end{align*}
+
+So we see that the $\bm{n}_i\bm{\widetilde{n}}_j$ term acts as an identity multiplier only for $|10\rangle$ and produces a zero vector for anything else. Then, the $\bm{\widetilde{n}}_i\bm{n}_j$ term:
+\begin{align*}
+\bm{\widetilde{n}}_1\bm{n}_0 \; |00\rangle
+  &= \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{\widetilde{n}}_0 \; |01\rangle
+  &= \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}1\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\1\\0\\0\end{pmatrix}
+      = |1\rangle_2
+     = |01\rangle
+     = \bm{1} |01\rangle\\
+\bm{n}_1\bm{\widetilde{n}}_0 \; |10\rangle
+  &= \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}1\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\0\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}\\
+\bm{n}_1\bm{\widetilde{n}}_0 \; |11\rangle
+  &= \begin{pmatrix}1 & 0\\0 & 0\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0 & 0\\0 & 1\end{pmatrix}
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\0\end{pmatrix}
+     \otimes
+     \begin{pmatrix}0\\1\end{pmatrix}
+     = \begin{pmatrix}0\\0\\0\\0\end{pmatrix}
+\end{align*}
+
+We see that the $\bm{\widetilde{n}}_i\bm{n}_j$ term acts as an identity multiplier only for $|01\rangle$ and produces a zero vector for anything else.
+
+\vspace{0.125in}
+
+The results (appropriately generalized, and echoing the description by Mermin) are summarized in Figure \ref{fig:Eq135Interpret}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.5\textwidth]{FIGURES/Mermin_(2007)_Support_(Eq_135).jpg}
+  \caption{Summary interpretation of terms in Mermin's (2007) Eq (1.35), pg 12. For the $i$th and $j$th Cbits each being $|1\rangle$, all the terms but the first collapse to zero vectors and that first term returns the original input. For the $i$th and $j$th Cbits each being $|0\rangle$, all the terms but the second one collapse to zero vectors and the second term returns the original input. The third and fourth terms serve as identity multipliers for inputs $|10\rangle$ and $|01\rangle$ respectively, then the $X_iX_j$ operators ``flip'' the individual states to produce $|01\rangle$ and $|10\rangle$ respectively. The overall effect, then is to take the targeted $i,j$ pair of Cbits and swap their values.}
+  \label{fig:Eq135Interpret}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%
+%   1.40          %
+%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.25in}
+
+\textbf{EQ 1.40 (The cNOT operator in terms of $\bm{X}$ and $\bm{Z}$)}\par
+
+\vspace{0.25in}
+
+Using the $\bm{X}$ (NOT or ``flip'') and $\bm{Z}$ operators:
+
+\begin{align*}
+  \bm{X} &= \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}\\
+  \bm{Z} &= \bm{\widetilde{n}} - \bm{n} = \begin{pmatrix}1 & 0\\0 & -1\end{pmatrix}
+\end{align*}
+
+Mermin notes that the cNOT operator can be expressed as:
+
+\begin{align*}\tag{1.40}
+    \bm{C}_{ij}
+    &= \frac{1}{2}(\bm{1} + \bm{Z}_i)
+       + \frac{1}{2}\bm{X}_j(\bm{1} - \bm{Z}_i)\\
+    &= \frac{1}{2}(\bm{1} + \bm{X}_j)
+       + \frac{1}{2}\bm{Z}_i(\bm{1} - \bm{X}_j)
+\end{align*}
+
+where ``The second form follows from the first because $\bm{X}_j$ and $\bm{Z}_i$ commute when $i \ne j$'' [pg. 13]
+
+\vspace{0.125in}
+
+To see this more clearly, we expand the first line, rearrange, and then use the commutativity of $\bm{X}_j$ and $\bm{Z}_i$ as follows:
+
+\begin{align*}
+    \bm{C}_{ij}
+    = \frac{1}{2}(\bm{1} + \bm{Z}_i)
+       + \frac{1}{2}\bm{X}_j(\bm{1} - \bm{Z}_i)
+    & = \frac{1}{2}\bm{1} + \frac{1}{2}\bm{Z}_i
+        + \frac{1}{2}\bm{X}_j\bm{1} - \frac{1}{2}\bm{X}_j\bm{Z}_i
+        \text{ [expanding]}\\
+    & = \frac{1}{2}\bm{1} + \frac{1}{2}\bm{X}_j\bm{1}
+         + \frac{1}{2}\bm{Z}_i - \frac{1}{2}\bm{X}_j\bm{Z}_i
+        \text{ [rearranging]}\\
+    & = \frac{1}{2}\bm{1} + \frac{1}{2}\bm{X}_j\bm{1}
+         + \frac{1}{2}\bm{Z}_i - \frac{1}{2}\bm{Z}_i\bm{X}_j
+        \text{ [commuting }\bm{X}_j\text{ and }\bm{Z}_i\text{]}\\
+    &= \frac{1}{2}(\bm{1} + \bm{X}_j)
+       + \frac{1}{2}\bm{Z}_i(\bm{1} - \bm{X}_j)
+       \text{ [factoring]}
+\end{align*}
+
+\vspace{0.125in}
+
+%%%%%%%%%%%%%%%%%%%
+%   1.41          %
+%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.25in}
+
+\textbf{EQ 1.41 (The Marsh-Hadamard Transformation $\bm{H}$)}\par
+
+\vspace{0.25in}
+
+The Hadamard (or Marsh-Hadamard) transformation $\bm{H}$ is defined by:
+
+\[\tag{1.41}
+\bm{H} = \frac{1}{\sqrt{2}}(\bm{X} + \bm{Z}) = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+\]
+
+Mermin observes that (pg 14), since $\bm{X}^2 = \bm{Z}^2 = \bm{1}$ and $\bm{X}\bm{Z} = -\bm{Z}\bm{X}$, one easily shows from the definition (1.41) of $\bm{H}$ in terms of $\bm{X}$ and $\bm{Z}$ that
+\[\tag{1.42}
+\bm{H}^2 = \bm{1}
+\]
+and that
+\[\tag{1.43}
+\bm{H}\bm{X}\bm{H} = \bm{Z},\quad\bm{H}\bm{Z}\bm{H} = \bm{X}.
+\]
+So let's do the math and show these things. From (1.41) and the anti-commutativity of $\bm{X}$ and $\bm{Z}$ we have:
+\begin{align*}
+    \bm{H}^2
+    &= \frac{1}{2}(\bm{X} + \bm{Z})^2\\
+    &= \frac{1}{2}(\bm{X}^2 + \bm{X}\bm{Z} + \bm{Z}\bm{X} +  \bm{Z}^2)\\
+    &= \frac{1}{2}(\bm{X}^2 + \bm{X}\bm{Z} - \bm{X}\bm{Z} +  \bm{Z}^2)\\
+    &= \frac{1}{2}(\bm{X}^2 + \bm{Z}^2)\\
+    &= \frac{1}{2}(\bm{1} + \bm{1})\\
+    &= \bm{1}
+\end{align*}
+We also have:
+\begin{align*}
+    \bm{H}\bm{X}\bm{H}
+    &= \frac{1}{\sqrt{2}}(\bm{X} + \bm{Z})\bm{X}(\frac{1}{\sqrt{2}})(\bm{X} + \bm{Z})\\
+    &= \frac{1}{2}(\bm{X} + \bm{Z})\bm{X}(\bm{X} + \bm{Z})\\
+    &= \frac{1}{2}(\bm{X}^2 + \bm{Z}\bm{X})(\bm{X} + \bm{Z})\\
+    &= \frac{1}{2}(\bm{X}^2\bm{X} + \bm{X}^2\bm{Z} + \bm{Z}\bm{X}^2 + \bm{Z}\bm{X}\bm{Z})\\
+    &= \frac{1}{2}(\bm{X}^2\bm{X} + \bm{X}^2\bm{Z} + \bm{Z}\bm{X}^2 - \bm{Z}^2\bm{X})\\
+    &= \frac{1}{2}(\bm{X} + \bm{Z} + \bm{Z} - \bm{X})\\
+    &= \bm{Z}
+\end{align*}
+and
+\begin{align*}
+    \bm{H}\bm{Z}\bm{H}
+    &= \frac{1}{\sqrt{2}}(\bm{X} + \bm{Z})\bm{Z}(\frac{1}{\sqrt{2}})(\bm{X} + \bm{Z})\\
+    &= \frac{1}{2}(\bm{X} + \bm{Z})\bm{Z}(\bm{X} + \bm{Z})\\
+    &= \frac{1}{2}(\bm{X}\bm{Z} + \bm{Z}^2)(\bm{X} + \bm{Z})\\
+    &= \frac{1}{2}(\bm{X}\bm{Z}\bm{X} + \bm{X}\bm{Z}^2 + \bm{Z}^2\bm{X} + \bm{Z}^2\bm{Z})\\
+    &= \frac{1}{2}(-\bm{X}^2\bm{Z} + \bm{X}\bm{Z}^2 + \bm{Z}^2\bm{X} + \bm{Z}^2\bm{Z})\\
+    &= \frac{1}{2}(-\bm{Z} + \bm{X} + \bm{X} + \bm{Z})\\
+    &= \bm{X}
+\end{align*}
 
 
 % =============== %
