@@ -525,6 +525,56 @@ and
     &= \bm{X}
 \end{align*}
 
+\vspace{0.125in}
+
+%%%%%%%%%%%%%%%%%%%
+%   1.44          %
+%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.25in}
+
+\textbf{EQ 1.44 (Transforming $\bm{C}_{ij}$ to $\bm{C}_{ji}$ using the Marsh-Hadamard Transformation $\bm{H}$)}\par
+
+\vspace{0.25in}
+
+Mermin writes (pg 14) that ``it follows from (1.43), together with (1.40) and (1.42), that''
+
+\[\tag{1.44}
+\bm{C}_{ji} = (\bm{H}_i\bm{H}_j)\bm{C}_{ij}(\bm{H}_i\bm{H}_j)
+\]
+
+Recall from (1.40) that $\bm{C}_{ij} = \frac{1}{2}[(\bm{1} + \bm{Z}_i) + \bm{X}_j(\bm{1} - \bm{Z}_i)]$ and thus $\bm{C}_{ji} = \frac{1}{2}[(\bm{1} + \bm{Z}_j) + \bm{X}_i(\bm{1} - \bm{Z}_j)]$. So we can gradually process the RHS of (1.44), keeping in mind the commutativity of the matrix multiplications when the subscripts do not match:
+
+\begin{align*}
+(\bm{H}_i\bm{H}_j)\bm{C}_{ij}(\bm{H}_i\bm{H}_j)
+&= \frac{1}{2}(\bm{H}_i\bm{H}_j)[(\bm{1} + \bm{Z}_i) + \bm{X}_j(\bm{1} - \bm{Z}_i)](\bm{H}_i\bm{H}_j)\\
+&= \frac{1}{2}[\bm{H}_i\bm{H}_j + \bm{H}_i\bm{H}_j\bm{Z}_i + \bm{H}_i\bm{H}_j\bm{X}_j - \bm{H}_i\bm{H}_j\bm{X}_j\bm{Z}_i](\bm{H}_i\bm{H}_j)\\
+&= \frac{1}{2}[\bm{H}_i\bm{H}_j\bm{H}_i\bm{H}_j + \bm{H}_i\bm{H}_j\bm{Z}_i\bm{H}_i\bm{H}_j + \bm{H}_i\bm{H}_j\bm{X}_j\bm{H}_i\bm{H}_j - \bm{H}_i\bm{H}_j\bm{X}_j\bm{Z}_i\bm{H}_i\bm{H}_j]\\
+&= \frac{1}{2}[\bm{H}_i\bm{H}_i\bm{H}_j\bm{H}_j
++ \bm{H}_j\bm{H}_i\bm{Z}_i\bm{H}_i\bm{H}_j
++ \bm{H}_i\bm{H}_j\bm{X}_j\bm{H}_j\bm{H}_i
+- \bm{H}_j\bm{X}_j\bm{H}_i\bm{Z}_i\bm{H}_i\bm{H}_j] \text{\hspace{.25in}[commuting]}\\
+&= \frac{1}{2}[(\bm{1})(\bm{1})
++ \bm{H}_j\bm{X}_i\bm{H}_j
++ \bm{H}_i\bm{Z}_j\bm{H}_i
+- \bm{H}_j\bm{X}_j\bm{X}_i\bm{H}_j] \text{\hspace{.25in}[simplifying using (1.42) and (1.43)]}\\
+&= \frac{1}{2}[\bm{1}
++ \bm{H}_j\bm{H}_j\bm{X}_i
++ \bm{H}_i\bm{H}_i\bm{Z}_j
+- \bm{H}_j\bm{X}_j\bm{H}_j\bm{X}_i] \text{\hspace{.25in}[commuting]}\\
+&= \frac{1}{2}[\bm{1}
++ \bm{X}_i
++ \bm{Z}_j
+- \bm{Z}_j\bm{X}_i] \text{\hspace{.25in}[simplifying using (1.42) and (1.43)]}\\
+&= \frac{1}{2}[\bm{1}
++ \bm{Z}_j
++ \bm{X}_i
+- \bm{X}_i\bm{Z}_j] \text{\hspace{.25in}[commuting]}\\
+&= \frac{1}{2}[(\bm{1} + \bm{Z}_j)
++ \bm{X}_i (\bm{1} - \bm{Z}_j)] \text{\hspace{.25in}[factoring]}\\
+&= \bm{C}_{ji}
+\end{align*}
+
 
 % =============== %
 %  Bibliography   %
