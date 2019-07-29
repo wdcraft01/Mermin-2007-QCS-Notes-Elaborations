@@ -575,19 +575,54 @@ Recall from (1.40) that $\bm{C}_{ij} = \frac{1}{2}[(\bm{1} + \bm{Z}_i) + \bm{X}_
 &= \bm{C}_{ji}
 \end{align*}
 
+
 % ===================== %
 %   (2^n)! Typo pg 19   %
 % ===================== %
 
 \vspace{0.25in}
 
-\textbf{$(2^n)!$ and Text Typo on pg 19}\par
+\textbf{\large $(2^n)!$ and Text Typo on pg 19}\par
 
 \vspace{0.25in}
 
 There appears to be a typo or mis-statement in the paragraph just before Eq (1.68) on pg 19. Mermin writes that ``The most general reversible $n$-Cbit oepration in a classical computer is a permutation of the $(2^n)!$ different classical-basis states,'' but there should be just $2^n$ basis states and $(2^n)!$ \textit{permutations} (that seems clear from the next sentence and from the earlier discussion of permutations on pg 9 (beginning in the paragraph just before Eq. (1.19)).
 
+% ============================ %
+%  The Generalized Born Rule   %
+%  Eq. 1.76                    %
+% ============================ %
+
 \vspace{0.25in}
+
+\textbf{\large The Generalized Born Rule, Eq. (1.76)}\par
+
+\vspace{0.25in}
+
+The presentation and equation for the generalized Born rule is difficult to follow at first, and thus worthy  of some careful elaboration and examples. As Mermin remarks (pg 28), this stronger form of the Born rule ``applies when one measures only a single one of $n+1$ Qbits, by sending it through a standard 1-Qbit measurement gate.''
+
+Mermin begins by noting that any state $|\Psi\rangle_{n+1}$ of all $n+1$ Qbits can be represented in the form:
+
+\[\tag{1.76}
+|\Psi\rangle_{n+1} =
+  \alpha_0 |0\rangle |\Phi_0\rangle_n
+  + \alpha_1 |1\rangle |\Phi_1\rangle_n,
+  \hspace{0.25in}|\alpha_0|^2 + |\alpha_1|^2 = 1
+\]
+
+where $|\Phi_0\rangle_n$ and $|\Phi_1\rangle_n$ are normalized but not necessarily orthogonal.
+
+\vspace{0.125in}
+
+As we shall see, this is a way to re-express the $(n+1)$-Qbit system state $|\Psi\rangle_{n+1}$ in terms of the left-most Qbit plus the collection of the remaining $n$ Qbits.
+
+\vspace{0.125in}
+
+Note that the $|0\rangle$ and $|1\rangle$ in (1.76) are actually the Cbit (or equivalent Qbit) states $|0\rangle_1$ and $|1\rangle_1$, respectively, which will then give the correct sizes for the result of the tensor products implied on the right-hand side of (1.76). To be more explicit: $|\Psi\rangle_{n+1}$ (\textit{i.e.}, the left-hand side of (1.76)) can be represented as a $2^{n+1}\times 1$ column vector. From the right-hand side, $|0\rangle$ is a $2\times 1$ column vector and $|\Phi_0\rangle_{n}$ is a $2^n \times 1$ column vector. The tensor product $|0\rangle |\Phi_0\rangle_{n}$ is thus a $2(2^n\times 1 = 2^{n+1}\times 1$ column vector. Similarly, $|1\rangle |\Phi_1\rangle_{n}$ is also a $2^{n+1}\times 1$ column vector.
+
+\vspace{0.25in}
+
+\textbf{\large Some Notation}\par
 
 $\psi$ (psi) versus $\phi$ (phi) versus $\varphi$ (phi variant style)
 
