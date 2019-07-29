@@ -550,30 +550,46 @@ Recall from (1.40) that $\bm{C}_{ij} = \frac{1}{2}[(\bm{1} + \bm{Z}_i) + \bm{X}_
 &= \frac{1}{2}(\bm{H}_i\bm{H}_j)[(\bm{1} + \bm{Z}_i) + \bm{X}_j(\bm{1} - \bm{Z}_i)](\bm{H}_i\bm{H}_j)\\
 &= \frac{1}{2}[\bm{H}_i\bm{H}_j + \bm{H}_i\bm{H}_j\bm{Z}_i + \bm{H}_i\bm{H}_j\bm{X}_j - \bm{H}_i\bm{H}_j\bm{X}_j\bm{Z}_i](\bm{H}_i\bm{H}_j)\\
 &= \frac{1}{2}[\bm{H}_i\bm{H}_j\bm{H}_i\bm{H}_j + \bm{H}_i\bm{H}_j\bm{Z}_i\bm{H}_i\bm{H}_j + \bm{H}_i\bm{H}_j\bm{X}_j\bm{H}_i\bm{H}_j - \bm{H}_i\bm{H}_j\bm{X}_j\bm{Z}_i\bm{H}_i\bm{H}_j]\\
-&= \frac{1}{2}[\bm{H}_i\bm{H}_i\bm{H}_j\bm{H}_j
+&=\tag{commuting} \frac{1}{2}[\bm{H}_i\bm{H}_i\bm{H}_j\bm{H}_j
 + \bm{H}_j\bm{H}_i\bm{Z}_i\bm{H}_i\bm{H}_j
 + \bm{H}_i\bm{H}_j\bm{X}_j\bm{H}_j\bm{H}_i
-- \bm{H}_j\bm{X}_j\bm{H}_i\bm{Z}_i\bm{H}_i\bm{H}_j] \text{\hspace{.25in}[commuting]}\\
-&= \frac{1}{2}[(\bm{1})(\bm{1})
+- \bm{H}_j\bm{X}_j\bm{H}_i\bm{Z}_i\bm{H}_i\bm{H}_j]\\
+&=\tag{simplifying using (1.42) and (1.43)} \frac{1}{2}[(\bm{1})(\bm{1})
 + \bm{H}_j\bm{X}_i\bm{H}_j
 + \bm{H}_i\bm{Z}_j\bm{H}_i
-- \bm{H}_j\bm{X}_j\bm{X}_i\bm{H}_j] \text{\hspace{.25in}[simplifying using (1.42) and (1.43)]}\\
-&= \frac{1}{2}[\bm{1}
+- \bm{H}_j\bm{X}_j\bm{X}_i\bm{H}_j]\\
+&=\tag{commuting} \frac{1}{2}[\bm{1}
 + \bm{H}_j\bm{H}_j\bm{X}_i
 + \bm{H}_i\bm{H}_i\bm{Z}_j
-- \bm{H}_j\bm{X}_j\bm{H}_j\bm{X}_i] \text{\hspace{.25in}[commuting]}\\
-&= \frac{1}{2}[\bm{1}
+- \bm{H}_j\bm{X}_j\bm{H}_j\bm{X}_i]\\
+&=\tag{simplifying using (1.42) and (1.43)} \frac{1}{2}[\bm{1}
 + \bm{X}_i
 + \bm{Z}_j
-- \bm{Z}_j\bm{X}_i] \text{\hspace{.25in}[simplifying using (1.42) and (1.43)]}\\
-&= \frac{1}{2}[\bm{1}
+- \bm{Z}_j\bm{X}_i]\\
+&=\tag{commuting} \frac{1}{2}[\bm{1}
 + \bm{Z}_j
 + \bm{X}_i
-- \bm{X}_i\bm{Z}_j] \text{\hspace{.25in}[commuting]}\\
-&= \frac{1}{2}[(\bm{1} + \bm{Z}_j)
-+ \bm{X}_i (\bm{1} - \bm{Z}_j)] \text{\hspace{.25in}[factoring]}\\
+- \bm{X}_i\bm{Z}_j]\\
+&=\tag{factoring} \frac{1}{2}[(\bm{1} + \bm{Z}_j)
++ \bm{X}_i (\bm{1} - \bm{Z}_j)]\\
 &= \bm{C}_{ji}
 \end{align*}
+
+% ===================== %
+%   (2^n)! Typo pg 19   %
+% ===================== %
+
+\vspace{0.25in}
+
+\textbf{$(2^n)!$ and Text Typo on pg 19}\par
+
+\vspace{0.25in}
+
+There appears to be a typo or mis-statement in the paragraph just before Eq (1.68) on pg 19. Mermin writes that ``The most general reversible $n$-Cbit oepration in a classical computer is a permutation of the $(2^n)!$ different classical-basis states,'' but there should be just $2^n$ basis states and $(2^n)!$ \textit{permutations} (that seems clear from the next sentence and from the earlier discussion of permutations on pg 9 (beginning in the paragraph just before Eq. (1.19)).
+
+\vspace{0.25in}
+
+$\psi$ (psi) versus $\phi$ (phi) versus $\varphi$ (phi variant style)
 
 
 % =============== %
