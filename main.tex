@@ -595,7 +595,7 @@ There appears to be a typo or mis-statement in the paragraph just before Eq (1.6
 
 \vspace{0.25in}
 
-\textbf{\large The Generalized Born Rule, Eq. (1.76)}\par
+\textbf{\large \S1.9 The Generalized Born Rule, Eq. (1.76)}\par
 
 \vspace{0.25in}
 
@@ -618,7 +618,77 @@ As we shall see, this is a way to re-express the $(n+1)$-Qbit system state $|\Ps
 
 \vspace{0.125in}
 
-Note that the $|0\rangle$ and $|1\rangle$ in (1.76) are actually the Cbit (or equivalent Qbit) states $|0\rangle_1$ and $|1\rangle_1$, respectively, which will then give the correct sizes for the result of the tensor products implied on the right-hand side of (1.76). To be more explicit: $|\Psi\rangle_{n+1}$ (\textit{i.e.}, the left-hand side of (1.76)) can be represented as a $2^{n+1}\times 1$ column vector. From the right-hand side, $|0\rangle$ is a $2\times 1$ column vector and $|\Phi_0\rangle_{n}$ is a $2^n \times 1$ column vector. The tensor product $|0\rangle |\Phi_0\rangle_{n}$ is thus a $2(2^n\times 1 = 2^{n+1}\times 1$ column vector. Similarly, $|1\rangle |\Phi_1\rangle_{n}$ is also a $2^{n+1}\times 1$ column vector.
+Note that the $|0\rangle$ and $|1\rangle$ in (1.76) are actually the Cbit (or equivalent Qbit) states $|0\rangle_1$ and $|1\rangle_1$, respectively, which will then give the correct sizes for the result of the tensor products implied on the right-hand side of (1.76). To be more explicit: $|\Psi\rangle_{n+1}$ (\textit{i.e.}, the left-hand side of (1.76)) can be represented as a $2^{n+1}\times 1$ column vector. From the right-hand side, $|0\rangle$ is a $2\times 1$ column vector and $|\Phi_0\rangle_{n}$ is a $2^n \times 1$ column vector. The tensor product $|0\rangle |\Phi_0\rangle_{n}$ is thus a $2(2^n)\times 1 = 2^{n+1}\times 1$ column vector. Similarly, $|1\rangle |\Phi_1\rangle_{n}$ is also a $2^{n+1}\times 1$ column vector.
+
+\vspace{0.125in}
+
+Letting:
+
+\[\tag{1.77}
+  |\Psi\rangle_{n+1} = \sum_{x=0}^{2^{n+1}-1}\gamma(x)|x\rangle_{n+1},
+  \text{ where }
+  \sum_{x=0}^{2^{n+1}-1}|\gamma(x)|^2 = 1,
+\]
+
+the states $|\Phi_0\rangle_n$ and $|\Phi_1\rangle_n$ are given by
+
+\[\tag{1.78}
+  |\Phi_0\rangle_n = \frac{1}{\alpha_0}
+  \sum_{x=0}^{2^{n}-1}\gamma(x)|x\rangle_{n}
+  \text{ and }
+  |\Phi_1\rangle_n = \frac{1}{\alpha_1}
+  \sum_{x=0}^{2^{n}-1}\gamma(2^n + x)|x\rangle_{n},
+\]
+
+where
+
+\[\tag{1.79}
+\alpha^2_0 = \sum_{x=0}^{2^{n}-1}|\gamma(x)|^2
+\text{ and }
+\alpha^2_1 = \sum_{x=0}^{2^{n}-1}|\gamma(2^n + x)|^2.
+\]
+
+The first term on the right-hand side of (1.76), then, gives:
+
+\[
+  \alpha_0 |0\rangle |\Phi_0\rangle_n
+  =
+  \alpha_0 \begin{pmatrix}1\\0\end{pmatrix}
+  \otimes
+  \begin{pmatrix}\gamma(0)/\alpha_0\\
+                 \gamma(1)/\alpha_0\\
+                 \gamma(2)/\alpha_0\\ \vdots \\
+                 \gamma(2^n - 1)/\alpha_0\end{pmatrix}
+  =
+  \begin{pmatrix}\gamma(0)\\
+                 \gamma(1)\\
+                 \gamma(2)\\ \vdots \\
+                 \gamma(2^n - 1) \\
+                 0 \\ 0 \\ \vdots \\ 0
+                 \end{pmatrix}
+\]
+
+giving a $2^{n+1}\times 1$ column vector, the last half of which consists of all zero entries. The second term on the right-hand side of (1.76) gives:
+
+\[
+  \alpha_1 |1\rangle |\Phi_1\rangle_n
+  =
+  \alpha_1 \begin{pmatrix}0\\1\end{pmatrix}
+  \otimes
+  \begin{pmatrix}\gamma(2^n)/\alpha_1\\
+                 \gamma(2^n + 1)/\alpha_1\\
+                 \gamma(2^n + 2)/\alpha_1\\ \vdots \\
+                 \gamma(2^n + 2^n - 1)/\alpha_1\end{pmatrix}
+  =
+  \begin{pmatrix}0 \\ 0 \\ \vdots \\ 0 \\
+                 \gamma(2^n)\\
+                 \gamma(2^n + 1)\\
+                 \gamma(2^n +2)\\ \vdots \\
+                 \gamma(2^{n + 1} - 1)
+                 \end{pmatrix}
+\]
+
+giving a $2^{n+1}\times 1$ column vector, the first half of which consists of all zero entries.
 
 \vspace{0.25in}
 
